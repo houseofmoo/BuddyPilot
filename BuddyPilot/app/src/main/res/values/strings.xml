@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Buddy Pilot</string>
+    <string name="currentHeading">Current Heading</string>
+    <string name="reciprocalRadial">Reciprocal Radial</string>
+</resources>
