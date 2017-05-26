@@ -49,8 +49,11 @@ public class MainActivity extends AppCompatActivity {
                     // parse int value
                     int value = Integer.parseInt(headingText);
 
+                    // get reciprocal
+                    value = GetReciprocal(value);
+
                     // get reciprocal and set at reciprocal elements text
-                    editText_Reciprocal.setText(GetReciprocal(value));
+                    editText_Reciprocal.setText(AddLeadingZeros(value));
                 } catch (Exception e) {
                     // if we had a bad value, blank out reciprocal elements text
                     editText_Reciprocal.setText("");
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // gets the reciprocal heading
-    public String GetReciprocal(int heading) {
+    public int GetReciprocal(int heading) {
         // remove excess degrees
         heading = heading % 360;
 
@@ -70,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
         // if heading is 360, replace with 0
         heading = heading == 360 ? 0 : heading;
 
+        return heading;
+    }
+
+    // adds leading zeros to a heading
+    public String AddLeadingZeros(int heading) {
         // add leading zeros cause pilots are weird
         String headingText;
         if (heading < 10) {
